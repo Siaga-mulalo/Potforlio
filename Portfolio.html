@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulalo Siaga · CS Student</title>
+    <!-- Font Awesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ========== SUPER SIMPLE CSS ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #d0e0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* main white card */
+        .card {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* header with photo */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* photo circle */
+        .photo-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #1e4a7a;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* name and title */
+        .name h1 {
+            font-size: 2.5rem;
+            color: #0a2647;
+        }
+
+        .name .title {
+            background: #e4f0ff;
+            padding: 8px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            color: #1e4a7a;
+            font-weight: 600;
+        }
+
+        /* intro box */
+        .intro {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-left: 6px solid #1e4a7a;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        /* two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .skill-box {
+            background: #f5faff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #c7dcf0;
+        }
+
+        .skill-box h2 {
+            color: #0a2647;
+            font-size: 1.5rem;
+            border-bottom: 2px dotted #1e4a7a;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box li {
+            padding: 8px 0 8px 25px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%231e4a7a" stroke-width="3"><circle cx="12" cy="12" r="6"/></svg>') left center no-repeat;
+            background-size: 14px;
+            border-bottom: 1px dashed #c5d7ec;
+        }
+
+        .skill-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* distinctions */
+        .distinctions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+            margin: 15px 0;
+        }
+
+        .badge {
+            background: #3b8adf;
+            color: rgb(245, 238, 238);
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        .badge i {
+            margin-right: 5px;
+        }
+
+        /* projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .project-item {
+            background: #f5faff;
+            padding: 15px;
+            border-radius: 18px;
+            border: 1px solid #c9dcf2;
+        }
+
+        .project-item h4 {
+            color: #1e4a7a;
+            margin-bottom: 8px;
+        }
+
+        /* contact */
+        .contact {
+            background: #0a2647;
+            color: white;
+            padding: 25px;
+            border-radius: 25px;
+            margin-top: 25px;
+        }
+
+        .contact h3 {
+            color: #c7e2ff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            margin: 10px 0;
+        }
+
+        .contact-item {
+            background: #1f4172;
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #5a8ec9;
+        }
+
+        .student-nr {
+            background: #123456;
+            padding: 10px 25px;
+            border-radius: 40px;
+        }
+
+        hr {
+            border: 1px dashed #3a6191;
+            margin: 20px 0;
+        }
+
+        /* responsive */
+        @media (max-width: 650px) {
+            .two-col { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
+            .header { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- ========== HEADER WITH YOUR SELFIE ========== -->
+        <div class="header">
+            <div class="photo-circle">
+                <!-- 👇 YOUR SELFIE IMAGE - NOW USING .JPEG -->
+                <img src="MySelfie.jpeg" alt="Mulalo selfie">
+            </div>
+            <div class="name">
+                <h1>Mulalo Siaga</h1>
+                <span class="title"><i class="fa-regular fa-star"></i> 2nd Year CS · UNIVEN</span>
+            </div>
+        </div>
+
+        <!-- ========== INTRO ========== -->
+        <div class="intro">
+            <i class="fa-regular fa-message" style="color:#1e4a7a; margin-right:8px;"></i>
+            "Aspiring software developer focused on building efficient, scalable systems through disciplined logic and continuous learning. Second-year Computer Science student at UNIVEN with strong academic foundation. Multiple times heckathon participant, eager to apply theoretical knowledge in practical projects and internships."
+        </div>
+
+        <!-- ========== SKILLS ========== -->
+        <div class="two-col">
+            <div class="skill-box">
+                <h2><i class="fa-solid fa-code"></i> Technical Skills</h2>
+                <ul>
+                    <li>Java & C++</li>
+                    <li>HTML & JavaSript</li>
+                    <li>Computer Technology</li>
+                    <li>Computer Architecture</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <h2><i class="fa-solid fa-brain"></i> CS Fundamentals</h2>
+                <ul>
+                    <li>OS Concepts</li>
+                    <li>Problem Solving</li>
+                    <li>Database Basics</li>
+                    <li>Computational Thinking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========== FIRST YEAR DISTINCTIONS ========== -->
+        <div class="distinctions">
+            <h3><i class="fa-regular fa-award"></i> First Year Distinctions</h3>
+            <div class="badges">
+                <span class="badge"><i class="fa-regular fa-check"></i> Mathematics</span>
+                 <span class="badge"><i class="fa-regular fa-check"></i> Computer Mathematics</span>
+                <span class="badge"><i class="fa-regular fa-check"></i> Programming</span>
+                <span class="badge"><i class="fa-regular fa-check"></i> Computer Technology</span>
+                <span class="badge"><i class="fa-regular fa-check"></i> Communication Skills</span>
+            </div>
+            <p style="color:#1e3a5f;"><i class="fa-regular fa-note"></i> Academic consistency and strong performance</p>
+        </div>
+
+        <!-- ========== PROJECTS ========== -->
+        <div class="projects">
+            <div class="project-item">
+                <h4><i class="fa-regular fa-file-code"></i> Academic Website</h4>
+                <p> https://25002460.github.io/Up-We-Go-</p>
+            </div>
+            <div class="project-item">
+                <h4><i class="fa-regular fa-chart-line"></i> Academic Website</h4>
+                <p>https://25002460.github.io/My-Web-App</p>
+            </div>
+            <div class="project-item">
+                <h4><i class="fa-regular fa-microchip"></i> Academic Website</h4>
+                <p>https://25002460.github.io/MinConversion</p>
+            </div>
+        </div>
+
+        <!-- ========== CONTACT (CLEAN - NO CORRECTION TAG) ========== -->
+        <div class="contact">
+            <h3><i class="fa-regular fa-address-card"></i> Contact & Student Info</h3>
+            
+            <div class="contact-row">
+                <span class="contact-item"><i class="fa-brands fa-whatsapp"></i> 061 725 0769</span>
+                <span class="contact-item"><i class="fa-solid fa-phone"></i> 066 541 4390</span>
+                <span class="contact-item"><i class="fa-regular fa-envelope"></i> mulalosiaga743@gmail.com</span>
+            </div>
+            
+            <div class="contact-row">
+                <span class="contact-item"><i class="fa-regular fa-envelope"></i> mulalosiaga269@gmail.com</span>
+                <span class="contact-item"><i class="fa-regular fa-envelope-open"></i> 25002460@mvula.univen.ac.za</span>
+                <span class="student-nr"><i class="fa-regular fa-id-card"></i> #2502460</span>
+            </div>
+            
+            <hr>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; color: #c7dfff;">
+                <span><i class="fa-regular fa-circle-check"></i> disciplined</span>
+                <span><i class="fa-regular fa-bolt"></i> structured thinker</span>
+                <span><i class="fa-regular fa-compass"></i> professional mindset</span>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div style="text-align: right; margin-top: 15px; color: #7a9bc2;">
+            <i class="fa-regular fa-file"></i> academic foundation · practical implementation
+        </div>
+    </div>
+
+    <!-- ========== SIMPLE JAVASCRIPT ========== -->
+    <script>
+        // Just a tiny script to confirm everything works
+        
+        // Show welcome message in console
+        console.log("✅ Mulalo's portfolio loaded successfully!");
+        console.log("📸 Selfie filename: MySelfie.jpeg");
+        
+        // Check if image loads, show message if not
+        const mySelfie = document.querySelector('.photo-circle img');
+        mySelfie.onerror = function() {
+            console.log("⚠️ Make sure MySelfie.jpeg is in the same folder");
+            // Add a friendly reminder in the page
+            const photoDiv = document.querySelector('.photo-circle');
+            photoDiv.style.background = '#1e4a7a';
+            photoDiv.style.display = 'flex';
+            photoDiv.style.alignItems = 'center';
+            photoDiv.style.justifyContent = 'center';
+            photoDiv.innerHTML = '<i class="fa-regular fa-user" style="color:white; font-size:3rem;"></i>';
+        };
+    </script>
+</body>
+</html>rr
